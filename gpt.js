@@ -15,6 +15,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 app.post("/verify", async (req, res) => {
   const { buretSol, indicator, erlenSol } = req.body;
+  console.log(indicator);
   try {
     const response1 = await openai.createCompletion({
       model: "text-davinci-003",
